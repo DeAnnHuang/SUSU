@@ -1,0 +1,85 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Helvetica', 'PingFang TC', "微軟正黑體";
+}
+
+@mixin Flex($x, $y) {
+    @include display-flex();
+    @if $x !=null {
+        @include align-items($x);
+    }
+    @if $y !=null {
+        @include justify-content($y);
+    }
+}
+
+a {
+    text-decoration: none;
+    &:hover {
+        text-decoration: none;
+    }
+}
+
+li {
+    list-style-type: none;
+}
+
+@mixin triangle($c, $n, $x, $y, $z, $w) {
+    .triangle {
+        display: inline-block;
+        margin: 0 1px;
+        width: 0;
+        height: 0;
+        border-style: solid;
+        border-width: $x $y $z $w;
+        @if $n==1 {
+            border-color: $c transparent transparent transparent;
+        }
+        @if $n==2 {
+            border-color: transparent $c transparent transparent;
+        }
+        @if $n==3 {
+            border-color: transparent transparent $c transparent;
+        }
+        @if $n==4 {
+            border-color: transparent transparent transparent $c;
+        }
+    }
+}
+
+.ellipsis {
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: nowrap;
+}
+
+@mixin ngAnimate {
+    &.ng-enter {
+        opacity: 0;
+        @include transition(0.3s ease all);
+        @include transform(translateY(-10%));
+        &.ng-enter-active {
+            opacity: 1;
+            @include transform(translateY(0));
+        }
+    }
+    &.ng-leave {
+        opacity: 1;
+        @include transition(0.3s ease all);
+        @include transform(translateY(0));
+        &.ng-leave-active {
+            opacity: 0;
+            @include transform(translateY(-10%));
+        }
+    }
+}
+
+[ng\:cloak],
+[ng-cloak],
+[data-ng-cloak],
+[x-ng-cloak],
+.ng-cloak,
+.x-ng-cloak {
+    display: none !important;
+}

@@ -1,0 +1,118 @@
+$bcolor:#a9a9a9;
+.form {
+    background: #fff;
+    color: #333;
+    margin: 15px;
+    padding: 30px 10px;
+    .content {
+        padding: 0;
+        margin: 0;
+        label {
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 28px;
+            .color {
+                color: #ac0026;
+            }
+        }
+        .form-control {
+            font-size: 18px;
+        }
+        .scode {
+            font-size: 24px;
+            font-style: italic;
+            padding-top: 5px;
+            color: #ac0026;
+        }
+        .btn {
+            display: block;
+            margin: 0 auto;
+            background-color: #333;
+            color: white;
+            padding: 10px 60px;
+            letter-spacing: 3px;
+            transition: all 0.8s;
+            font-size: 18px;
+        }
+    }
+    h3 {
+        text-align: left;
+        font-size: 18px;
+        line-height: 30px;
+    }
+    ol {
+        text-align: left;
+        padding-left: 16px;
+        li {
+            padding: 5px 0;
+            line-height: 20px;
+            list-style-type: decimal;
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .form {
+        .content {
+            padding: 25px 0px;
+            label {
+                font-weight: 500;
+                font-size: 24px;
+                line-height: 36px;
+                .color {
+                    color: #ac0026;
+                }
+            }
+            .btn {
+                font-size: 24px;
+            }
+            .form-control {
+                font-size: 24px;
+                height: 40px;
+            }
+        }
+        h3 {
+            margin-top: 20px;
+            padding-left: 0;
+            font-size: 14px;
+        }
+        ol li {
+            font-size: 12px;
+            line-height: 18px;
+            padding: 0;
+        }
+    }
+    .form-group .row .col-md-6 {
+        display: inline-block;
+        &:first-child {
+            width: 60%;
+            padding-right: 5px;
+        }
+        &:last-child {
+            width: 20%;
+            padding-left: 0;
+        }
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .form {
+        padding: 0 10px;
+        margin: 0;
+        .content {
+            label {
+                font-size: 20px;
+            }
+            .btn {
+                font-size: 20px;
+            }
+            .form-control{
+                font-size: 22px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 321px) {
+    
+}

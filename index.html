@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en" ng-app="App">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>myMusic演唱會Ｘ蘇運瑩台灣首次個唱</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
+    <link rel="stylesheet" href="build/css/style.css">
+    <script src="build/Library/jquery.min.js"></script>
+    <!-- 初始化FB SDK -->
+    <script type="text/javascript">
+    window.fbAsyncInit = function() {
+        FB.init({
+            //appId      : '443882305794804',
+            appId: '352280164892108',
+            xfbml: true,
+            version: 'v2.4'
+        });
+    };
+    (function(d, s, id) {
+        var js, fjs = d.getElementsByTagName(s)[0];
+        if (d.getElementById(id)) {
+            return;
+        }
+        js = d.createElement(s);
+        js.id = id;
+        js.src = "//connect.facebook.net/en_US/sdk.js";
+        fjs.parentNode.insertBefore(js, fjs);
+    }(document, 'script', 'facebook-jssdk'));
+
+    function share_fb_ui() {
+        //請修改以下要分享的訊息
+        //分享的連結
+        var _link = "http://staging.mymusic.net.tw/upload/event/susu/";
+        //要顯示的圖片 官方建議圖片大小1200x630, 最小600x315, 比例1.91:1
+        var _picture = "http://staging.mymusic.net.tw/upload/event/susu/build/img/fbPic.jpg";
+        //標題
+        var _name = '蘇運瑩台灣首次個唱';
+        //描述
+        var _description = "myMusic獨家贈票 / 線上LIVE直播";
+
+        FB.ui({
+            method: 'feed',
+            link: _link,
+            picture: _picture,
+            name: _name,
+            description: _description
+        }, function(response) {
+            on_success();
+        });
+    }
+
+    function on_success() {}
+
+    $(document).ready(function() {
+        //設定分享按鈕點擊事件
+        $(".bt_fb").click(function() {
+            share_fb_ui();
+        });
+    });
+    </script>
+</head>
+
+<body ng-controller="mainCtrl as ctrl">
+    <div class="livemusicWrap" ng-if="ctrl.Iframe">
+        <!-- 直播  start -->
+        <!--  <iframe src="http://175.99.91.208/TWM_Video/SDK/servlet_playerpageForSDK.jsp?contentID=2644&channelId=ch06&channelClassID=news_menu" class="LiveMusic"></iframe> -->
+        <!-- 直播 finish -->
+        <!-- ＭＶ start-->
+        <!-- <div class="LiveMusic">
+            <video width="100%" controls="controls" autoplay>
+                <source src="http://www.mymusic.net.tw/upload/event/susu/susu3.mp4" type="video/mp4">
+            </video>
+    </div> -->
+        <!-- ＭＶ finish -->
+        <div class="close" ng-click="ctrl.Iframe = false">
+            <p>X</p>
+        </div>
+    </div>
+    <div class="float_btns">
+        <a href="http://www.mymusic.net.tw/rentalAppling/index" target="blank">
+            <div class="btn">
+                <img src="build/img/pay.png">
+                <p>線上付費</p>
+            </div>
+        </a>
+        <a href="http://www.mymusic.net.tw/ux/w/product" target="blank">
+            <div class="btn">
+                <img src="build/img/download.png">
+                <p>軟體下載</p>
+            </div>
+        </a>
+        <a href=" ">
+            <div class="btn bt_fb">
+                <img src="build/img/fb.png">
+                <p>分享臉書</p>
+            </div>
+        </a>
+    </div>
+    <section class="se-container">
+        <div class="se-slope">
+            <div class="se-content main">
+                <div class="img-slope">
+                    <img src="build/img/MainImg.jpg" class="mainImg">
+                </div>
+                <div class="blackBG">
+                    <div class="data">
+                        <img src="build/img/SHU.png" class="SHU">
+                        <img class="logo" src="build/img/logo.png">
+                        <img class="Mainlogo" src="build/img/MainLogo.png">
+                        <div class="text">
+                            <h1>蘇運瑩<span class="subTitle">台灣首次個唱</span></h1>
+                            <p><span style="color: #ff0083;">搶票最後機會！</span></p>
+                            <div class="liveBtn">
+                                <!--      <a href="#" onclick="GA" ng-click="ctrl.OpenIframe()">8/7<small>(日)</small>19:30<span>線上直播</span><span class="triangle"></span></a> -->
+                                <a href="#">參加贈票活動<span class="triangle"></span></a>
+                                <!--  <p>若手機無法支援，請開啟 <a href="http://www.mymusic.net.tw/link/iact.gsp?kid=0">myMusic APP</a> 觀看</p> -->
+                            </div>
+                            <ul>
+                                <li>時間: 2016.08.07 / 7:30PM</li>
+                                <li>地點: Legacy台北 / 八德路一段1號中五館</li>
+                                <li>票券價值: 800元</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="se-slope">
+            <article class="se-content Step">
+                <h2>活動說明:</h2>
+                <p>於活動期間 <span>2016.<strong>6.28</strong> ~ 2016.<strong>7.25</strong></span>
+                    <br>購買儲值180天方案1次得1張票，2次得2張，以此類推，免抽即送，限量60張</p>
+                <h2 style="margin-top: 40px;">活動辦法:</h2>
+                <div ng-include="'step1.html'" ng-hide="ctrl.nonTicket" ng-cloak class="step1 ng-cloak"></div>
+                <div ng-include="'step2.html'" ng-hide="ctrl.nonTicket || ctrl.openUsercard" ng-cloak class="step2-1 ng-cloak"></div>
+                <div ng-include="'usercard.html'" ng-if="ctrl.openUsercard" ng-cloak class="step2-2 ng-cloak"></div>
+                <div class="noTicket ng-cloak" ng-cloak ng-if="ctrl.nonTicket">
+                    <p>票券已贈送完畢，謝謝大家的支持！</p>
+                </div>
+            </article>
+        </div>
+        <div class="se-slope">
+            <article class="se-content">
+                <div class="note">
+                    <h1>注意事項 :</h1>
+                    <ol>
+                        <li>「付費儲值單筆180天以上方案送Hi 蘇運瑩 Live Concert Legacy in Taipei演唱會入場卷」所指之「單筆180天以上」方案，共包含官網付費中心購買或儲值單筆180天方案。於活動期間付費儲值完成單筆180天方案並完成資料登記者，皆贈票一張，付費儲值二次贈票二張，以此類推。票券限量60張，送完為止。
+                        </li>
+                        <li>「「贈票順序依完成付費/序號儲值時間為序，先購買付費方案/完成序號儲值並登記完畢者優先取票，儲值時間依本公司電腦紀錄為準。
+                        </li>
+                        <li>本活動獎項(Hi 蘇運瑩 Live Concert Legacy in Taipei演唱會入場卷)將於本活動結束後，將得獎名單公布於<a href="http://www.mymusic.net.tw/customerService/queryNewBulletin">myMusic官網客服中心</a>，並於2016/7/31前以郵寄方式寄出票券至得獎者所指定之住址。
+                        </li>
+                        <li>倘本活動參加者因個人資料填寫不實，或因電腦、網路所發生之傳輸障礙等不可歸責於myMusic之事由，致無法將票券寄達，視同本活動參加者放棄贈品領取資格，myMusic不負任何責任，本活動參加者亦不得為任何異議或主張。
+                        </li>
+                        <li>myMusic保有隨時修改、暫停或終止本活動之權利，並不另行通知。本活動事項若有未盡事宜，myMusic得隨時補充或修改，統一以本活動網站公告為主；myMusic對活動內容及獎品保有修改及最後解釋權。
+                        </li>
+                    </ol>
+                </div>
+            </article>
+        </div>
+        <div class="se-slope">
+            <article class="se-content">
+                <div class="footer">
+                    <p class="links">
+                        <a href="https://www.mymusic.net.tw/">myMusic官網 |</a>
+                        <a href="https://www.mymusic.net.tw/about/index?t=map">服務總覽  |</a>
+                        <a href="https://www.mymusic.net.tw/about/index?t=utos">服務使用條款  |</a>
+                        <a href="https://www.mymusic.net.tw/about/index?t=privacy">隱私權政策  |</a>
+                        <a href="https://www.mymusic.net.tw/about/index?t=cooperation">合作夥伴 |</a>
+                        <a href="https://www.mymusic.net.tw/about/index?t=contact">聯絡我們 |</a>
+                        <a href="http://www.104.com.tw/jobbank/cust_job/introduce.cfm?j=403a4426405c3e6a40583a1d1d1d1d5f2443a363189j48&jobsource=checkc"> 人才招募 |</a>
+                        <a href="https://www.mymusic.net.tw/customerService/index">客服中心 |</a>
+                        <a href="https://www.taiwanmobile.com/index.html">台灣大哥大官網</a>
+                    </p>
+                    <p>台灣酷樂時代版權所有©2016 Taiwan Kuro Times Co., Ltd.</p>
+                </div>
+            </article>
+        </div>
+    </section>
+</body>
+<script src="build/Library/angular.min.js"></script>
+<script src="build/Library/angular-animate.min.js"></script>
+<script src="build/Library/angular-cookies.min.js"></script>
+<script src="build/js/App.js"></script>
+<script src="build/js/resize.js"></script>
+<script src="http://192.168.43.164:35729/livereload.js?snipver=1"></script>
+
+</html>

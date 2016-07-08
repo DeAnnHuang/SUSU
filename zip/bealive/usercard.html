@@ -1,0 +1,50 @@
+<p><span>step2.</span> 付費儲值完成，登記票券寄送資料</p>
+<div class="userCard">
+    <div class="u_data">
+        <ul class="u_dataGroup">
+            <li class="name">
+                <p>用戶名稱</p>
+            </li>
+            <li class="data">{{ctrl.username}}</li>
+        </ul>
+        <ul class="u_dataGroup">
+            <li class="name">
+                <p>帳號</p>
+            </li>
+            <li class="data">{{ctrl.account}}</li>
+        </ul>
+        <ul class="u_dataGroup">
+            <li class="name">
+                <p>Email信箱</p>
+            </li>
+            <li class="data">{{ctrl.email}}</li>
+        </ul>
+    </div>
+    <div class="pay_data">
+        <h3><p>付費紀錄</p></h3>
+        <table>
+            <thead>
+                <tr>
+                    <th class="ellipsis">時間</th>
+                    <th class="ellipsis">金額</th>
+                    <th class="ellipsis">付費方案</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr ng-repeat="order in ctrl.orders">
+                    <td class="ellipsis">{{order.payTime}}</td>
+                    <td class="ellipsis">{{order.amount}}</td>
+                    <td class="ellipsis">{{order.payType}}</td>
+                </tr>
+            </tbody>
+        </table>
+        <div class="result_Text">
+            <p>您可領取的票數為<span> {{ctrl.leftCount}} </span>張</p>
+            <p class="warning">{{ctrl.warning}}</p>
+        </div>
+    </div>
+</div>
+
+<div class="form" ng-include="'form.html'" ng-if="ctrl.CanOpenForm"></div>
+
+<div class="finish" ng-include="'finish.html'" ng-if="ctrl.finishForm"></div>

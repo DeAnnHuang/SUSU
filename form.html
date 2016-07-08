@@ -1,0 +1,64 @@
+<div class="box">
+    <div class="content row">
+        <form class="col-md-6" name="userDataForm" ng-submit="ctrl.IsFinish()">
+            <div class="form-group">
+                <label><span class="color">*</span>收件姓名</label>
+                <input type="text" 
+                       name="name"
+                       class="form-control"
+                       required>
+            </div>
+            <div class="form-group">
+                <label><span class="color">*</span>寄送地址</label>
+                <input type="text" 
+                       name="address"
+                       class="form-control"
+                       required>
+            </div>
+            <div class="form-group">
+                <label><span class="color">*</span>手機門號</label>
+                <input type="tel"
+                       name="phone"
+                       pattern="[0]{1}[9]{1}[0-9]{8}"
+                       class="form-control"
+                       title="例如：0987654321"
+                       required>
+            </div>
+            <div class="form-group">
+                <label><span class="color">*</span>驗證碼</label>
+                <div class="row">
+                    <div class="col-md-6">
+                        <input type="text" 
+                               name="scode"
+                               class="form-control"
+                               onchange="chk_scode(this)"
+                               required>
+                    </div>
+                    <div class="col-md-6">
+                        <p class="scode" ng-bind="ctrl.randomS"></p>
+                    </div>
+                </div>
+            </div>
+            <span class="buttons">
+            <input class="submit btn" 
+                   type=submit 
+                   value="確認送出" 
+                   ng-disabled="userDataForm.$invalid">
+            </span>
+        </form>
+        <div class="col-md-6">
+            <h3>※個資告知同意事項※</h3>
+            <ol>
+                <li>台灣酷樂時代股份有限公司（以下簡稱本公司）得於本公司營運 地區範圍及營運期間內基於舉辦「付費/儲值單筆180天方案送Hi 蘇運瑩Live Concert Legacy in Taipei」活動（以下簡稱本活動）之特定目的範圍內，蒐集、處理或利用您的識別類（姓名、行 動電話、通訊地址等）個人資料。
+                </li>
+                <li>您可依個人資料保護法規定，就您提供的個人資料向本公司：①查詢或請求閱覽②請求製給複製本③.請求補充或更正④請求停止蒐集、處理或利用⑤.請求刪除。
+                </li>
+                <li>您可以自由選擇提供資料（但依法令規定者不在此限），若選擇不提供或提供不完全，本公司將無法進行必要之處理作業，可能影響您參加本活動之權益。
+                </li>
+                <li>其餘詳<a href="http://www.mymusic.net.tw">本公司官網</a></li>
+                <li>當您參加本活動並提供個人資料時，即視為您已瞭解上述相關內容，並同意本公司蒐集、處理及利用您的個人資料。
+                </li>
+            </ol>
+        </div>
+    </div>
+</div>

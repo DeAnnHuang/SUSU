@@ -1,0 +1,33 @@
+.se-slope .se-content .footer {
+    // background: #05071f;
+    height: 70px;
+    color: #fff;
+    text-align: center;
+    @include Flex(center, center);
+    @include flex-direction(column);
+    p {
+        margin-bottom: 10px;
+        font-size: 16px;
+        line-height: 16px;
+    }
+    .links a {
+        text-decoration: none;
+        color: #fff;
+        &:hover {
+            color: lightseagreen;
+            transition: color 0.8s;
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .se-slope .se-content .footer p {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .se-slope .se-content .footer p {
+        font-size: 12px;
+    }
+}

@@ -1,0 +1,150 @@
+$color:black;
+$color2:white;
+$bottom:250px;
+$top:80px;
+body {
+    background: $color2;
+}
+
+.se-container {
+    display: block;
+    width: 100%;
+    overflow: hidden;
+    padding-top: 130px;
+    .se-slope {
+        margin: 0 -70px;
+        @include transform-origin(left, center);
+        .se-content {
+            margin: 0 auto;
+        }
+        &:nth-child(odd) {
+            // background: $color2;
+            background-image: url(../img/bg_Odd.jpg);
+            background-size: cover;
+            @include transform(rotate(5deg));
+            margin-top: -18%;
+            .se-content {
+                @include transform(rotate(-5deg)); //fix
+                color: $color;
+                padding: $top 0 180px 0;
+            }
+        }
+        &:nth-child(even) {
+            background: rgba($color, 0.7);
+            background-image: url(../img/bg_Even.jpg);
+            background-size: cover;
+            @include transform(rotate(-5deg));
+            .se-content {
+                @include transform(rotate(5deg)); //fix
+                color: $color2;
+                padding: $top 0 $bottom 0;
+            }
+        }
+        &:last-child {
+            margin-bottom: -$bottom;
+        }
+    }
+}
+
+//超大螢幕
+@media screen and (min-width: 1441px) {
+    $bottom: 300px;
+    .se-container {
+        padding-top: 10%;
+        .se-slope {
+            margin: 0 -80px;
+            &:nth-child(odd) {
+                .se-content {
+                    padding: $top 0 300px 0;
+                }
+            }
+            &:nth-child(even) {
+                .se-content {
+                    padding: $top 0 300px 0;
+                }
+            }
+            &:last-child {
+                margin-bottom: -350px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 1279px) {
+    $bottom: 12%;
+    .se-container {
+        padding-top: 8%;
+        .se-slope {
+            margin: 0 -80px;
+            &:nth-child(odd) {
+                .se-content {
+                    padding: $top 0 $bottom 0;
+                }
+            }
+            &:nth-child(even) {
+                .se-content {
+                    padding: $top 0 $bottom 0;
+                }
+            }
+            &:last-child {
+                margin-bottom: -$bottom;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    $bottom: 11%;
+    .se-container {
+        padding-top: 8%;
+        .se-slope {
+            &:nth-child(odd) {
+                margin-top: -19%;
+                .se-content {
+                    padding: $top 0 $bottom 0;
+                }
+            }
+            &:nth-child(even) {
+                .se-content {
+                    padding: $top 0 180px 0;
+                }
+            }
+            &:last-child {
+                margin-bottom: -200px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 414px) {
+    $top: 130px;
+    $bottom: 11%;
+    .se-container {
+        .se-slope {
+            margin: 0 -100px;
+            &:nth-child(odd) {
+                margin-top: -32%;
+                .se-content {
+                    padding: 30px 0 $bottom 0;
+                }
+            }
+            &:nth-child(even) {
+                .se-content {
+                    padding: 30px 0 180px 0;
+                }
+            }
+            &:first-child {
+                .se-content {
+                    padding: $top 0 $bottom 0;
+                }
+            }
+            &:last-child {
+                margin-bottom: -200px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) and (max-width: 374px) {
+    
+}

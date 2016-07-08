@@ -1,0 +1,299 @@
+.Step {
+    width: 70%;
+    h2 {
+        color: #6a9fff;
+        font-style: italic;
+        font-size: 22px;
+        line-height: 50px;
+    }
+    p {
+        margin: 0;
+        font-size: 18px;
+        line-height: 36px;
+        span {
+            font-size: 26px;
+            font-style: italic;
+            strong {
+                font-size: 38px;
+            }
+        }
+    }
+    .step1,
+    .step2-1 {
+        @include ngAnimate;
+        background: rgba(#fff, 0.2);
+        padding: 15px 30px;
+        margin-bottom: 25px;
+        @include Flex(center, space-between);
+        p {
+            font-size: 30px;
+            span {
+                font-size: 30px;
+                font-style: italic;
+            }
+            small {
+                font-size: 18px;
+            }
+        }
+        .btn {
+            position: relative;
+            background: #ec407a;
+            color: #fff;
+            font-size: 20px;
+            border-radius: 5px;
+            padding: 10px 60px 10px 50px;
+            text-align: center;
+            @include transition(all 0.8s);
+            span {
+                position: absolute;
+                right: 10px;
+                font-family: serif;
+            }
+            &:hover {
+                letter-spacing: 1px;
+            }
+        }
+    }
+    .step2-1 .btn {
+        padding: 10px 30px 10px 20px;
+    }
+    .step2-2 {
+        @include ngAnimate;
+        background: rgba(#fff, 0.4);
+        overflow: auto;
+        p {
+            background: rgba(#fff, 1);
+            padding: 15px 30px;
+            color: #222;
+            font-size: 30px;
+            span {
+                font-size: 30px;
+                font-style: italic;
+            }
+        }
+        .userCard {
+            background: #fff;
+            margin: 15px;
+            color: #000;
+            padding: 30px 20px;
+            @include Flex(flex-start, space-between);
+            .u_data {
+                display: inline-block;
+                width: 30%;
+                .u_dataGroup {
+                    margin-bottom: 20px;
+                    .name {
+                        border-left: 5px #e86400 solid;
+                        p {
+                            margin-left: 10px;
+                            font-size: 16px;
+                            color: #555;
+                            padding: 0;
+                            line-height: 24px;
+                        }
+                    }
+                    .data {
+                        color: #e86400;
+                        background: #f0f0f0;
+                        padding: 5px 13px;
+                        margin-top: 5px;
+                    }
+                }
+            }
+            .pay_data {
+                width: 65%;
+                h3 {
+                    border-left: 5px #e86400 solid;
+                    p {
+                        color: #555;
+                        font-size: 16px;
+                        margin-left: 10px;
+                        padding: 0;
+                        line-height: 24px;
+                    }
+                }
+                table {
+                    width: 100%;
+                    margin-top: 5px;
+                    thead {
+                        border-top: 1px solid #e86400;
+                        tr {
+                            border-bottom: 1px solid #e86400;
+                        }
+                    }
+                    tbody {
+                        tr {
+                            border-bottom: 1px solid #d6d6d6;
+                            &:last-child {
+                                border-bottom: 1px solid #e86400;
+                            }
+                        }
+                    }
+                    th,
+                    td {
+                        padding: 10px 5px;
+                        max-width: 180px;
+                    }
+                }
+                .result_Text {
+                    margin-top: 40px;
+                    float: right;
+                    text-align: end;
+                    p {
+                        font-size: 24px;
+                        padding: 0;
+                        line-height: 36px;
+                        span {
+                            font-size: 26px;
+                            color: #e86400;
+                            font-style: normal;
+                            border-bottom: 1px solid #000;
+                        }
+                    }
+                    .warning {
+                        color: #e86400;
+                    }
+                }
+            }
+        }
+        .finish {
+            @include ngAnimate;
+            margin: 15px;
+            background: rgba(#000, 0.4);
+            padding: 100px;
+            p {
+                background: none;
+                text-align: center;
+                font-size: 28px;
+                color: #fff;
+            }
+        }
+    }
+    .noTicket {
+        @include ngAnimate;
+        background: rgba(#fff, 0.2);
+        padding: 100px;
+        p {
+            font-size: 28px;
+            text-align: center;
+            color: #fff;
+        }
+    }
+}
+
+@media screen and (max-width: 990px) {
+    .Step .step1,
+    .Step .step2-1 {
+        @include flex-direction(column);
+    }
+    .Step .step2-2 .userCard {
+        .u_data .u_dataGroup.name p,
+        .u_data .u_dataGroup .data,
+        .pay_data h3 p,
+        .pay_data table {
+            font-size: 18px;
+        }
+    }
+    .Step .step2-2 .userCard .pay_data .result_Text p {
+        font-size: 20px;
+    }
+}
+
+@media screen and (max-width: 414px) {
+    .Step {
+        width: 60%;
+        h2 {
+            font-size: 16px;
+            line-height: 26px;
+        }
+        p {
+            font-size: 16px;
+            line-height: 28px;
+            span {
+                font-size: 20px;
+                strong {
+                    font-size: 30px;
+                }
+            }
+        }
+        .step1,
+        .step2-1 {
+            padding: 15px 0;
+            text-align: center;
+            p {
+                font-size: 18px;
+                span {
+                    font-size: 16px;
+                }
+                small {
+                    font-size: 14px;
+                }
+            }
+            .btn {
+                margin-top: 15px;
+            }
+        }
+        .step2-2 {
+            p {
+                padding: 15px 0;
+                text-align: center;
+                font-size: 18px;
+                letter-spacing: -1px;
+                span {
+                    font-size: 16px;
+                }
+            }
+            .userCard {
+                @include flex-direction(column);
+                margin: 15px 0;
+                .u_data {
+                    width: 100%;
+                    .u_dataGroup .name p {
+                        text-align: left;
+                    }
+                }
+                .pay_data {
+                    width: 100%;
+                    h3 p {
+                        text-align: left;
+                    }
+                    table {
+                        font-size: 14px;
+                    }
+                    .result_Text {
+                        margin-top: 20px;
+                        p {
+                            text-align: right;
+                        }
+                        .warning {
+                            font-size: 18px;
+                        }
+                    }
+                }
+            }
+            .finish {
+                margin: 15px 0 0 0;
+                padding: 50px 5px;
+                p {
+                    font-size: 22px;
+                    line-height: 30px;
+                }
+            }
+        }
+        .noTicket {
+            padding: 50px 5px;
+            p {
+                font-size: 20px;
+            }
+        }
+    }
+}
+
+@media screen and (max-width: 320px) and (max-width: 374px) {
+    .Step {
+        width: 58%;
+        .step2-2 .userCard .pay_data .result_Text .warning {
+            font-size: 16px;
+        }
+    }
+}
