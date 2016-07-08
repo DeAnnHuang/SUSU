@@ -1,26 +1,37 @@
 {
-    "name": "bealive",
-    "version": "1.0.0",
-    "description": "",
-    "main": "index.js",
-    "scripts": {
-        "test": "echo \"Error: no test specified\" && exit 1"
-    },
-    "author": "",
-    "license": "ISC",
-    "devDependencies": {
-        "gulp": "^3.9.1",
-        "gulp-compass": "^2.1.0",
-        "gulp-imagemin": "^2.4.0",
-        "gulp-livereload": "^3.8.1",
-        "gulp-notify": "^2.2.0",
-        "gulp-plumber": "^1.1.0",
-        "gulp-uglify": "^1.5.3",
-        "gulp-zip": "^3.2.0",
-        "jquery": "^2.2.3",
-        "mkdirp": "^0.5.1"
-    },
-    "scripts":{
-        "server": "python -m SimpleHTTPServer"
-    }
+  "name": "bealive",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "python -m SimpleHTTPServer"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "gulp": "^3.9.1",
+    "gulp-compass": "^2.1.0",
+    "gulp-imagemin": "^2.4.0",
+    "gulp-livereload": "^3.8.1",
+    "gulp-notify": "^2.2.0",
+    "gulp-plumber": "^1.1.0",
+    "gulp-uglify": "^1.5.3",
+    "gulp-zip": "^3.2.0",
+    "jquery": "^2.2.3",
+    "mkdirp": "^0.5.1"
+  },
+  "dependencies": {
+    "angular-animate": "^1.5.7",
+    "angular-cookies": "^1.5.7",
+    "angular": "^1.5.7",
+    "gsap": "^1.18.5"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/DeAnnHuang/SUSU.git"
+  },
+  "bugs": {
+    "url": "https://github.com/DeAnnHuang/SUSU/issues"
+  },
+  "homepage": "https://github.com/DeAnnHuang/SUSU#readme",
+  "description": ""
 }
