@@ -8,6 +8,23 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css">
     <link rel="stylesheet" href="build/css/style.css">
     <script src="build/Library/jquery.min.js"></script>
+    <!-- GA  -->
+    <script src="build/js/event_ga.js"></script>
+    <script type="text/javascript">
+    var _gaq = _gaq || [];
+    _gaq.push(['_setAccount', 'UA-32211794-3']);
+    _gaq.push(['_setDomainName', 'mymusic.net.tw']);
+    _gaq.push(['_trackPageview']);
+
+    (function() {
+        var ga = document.createElement('script');
+        ga.type = 'text/javascript';
+        ga.async = true;
+        ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+        var s = document.getElementsByTagName('script')[0];
+        s.parentNode.insertBefore(ga, s);
+    })();
+    </script>
     <!-- 初始化FB SDK -->
     <script type="text/javascript">
     window.fbAsyncInit = function() {
@@ -65,14 +82,14 @@
 <body ng-controller="mainCtrl as ctrl">
     <div class="livemusicWrap" ng-if="ctrl.Iframe">
         <!-- 直播  start -->
-        <!--  <iframe src="http://175.99.91.208/TWM_Video/SDK/servlet_playerpageForSDK.jsp?contentID=2644&channelId=ch06&channelClassID=news_menu" class="LiveMusic"></iframe> -->
+        <iframe src="http://www.myvideo.net.tw/MyVideo/SDK/player.do?channelId=ch013" class="LiveMusic"></iframe>
         <!-- 直播 finish -->
         <!-- ＭＶ start-->
         <!-- <div class="LiveMusic">
             <video width="100%" controls="controls" autoplay>
                 <source src="http://www.mymusic.net.tw/upload/event/susu/susu3.mp4" type="video/mp4">
             </video>
-    </div> -->
+        </div> -->
         <!-- ＭＶ finish -->
         <div class="close" ng-click="ctrl.Iframe = false">
             <p>X</p>
@@ -113,8 +130,8 @@
                             <h1>蘇運瑩<span class="subTitle">台灣首次個唱</span></h1>
                             <p><span style="color: #ff0083;">搶票最後機會！</span></p>
                             <div class="liveBtn">
-                                <!--      <a href="#" onclick="GA" ng-click="ctrl.OpenIframe()">8/7<small>(日)</small>19:30<span>線上直播</span><span class="triangle"></span></a> -->
-                                <a href="#">參加贈票活動<span class="triangle"></span></a>
+                                <a href="#" onclick="ga_event_mobile('演唱會直播','Click_View','演唱會直播_蘇蘇_WEB')" ng-click="ctrl.OpenIframe()">8/7<small>(日)</small>19:30<span>線上直播</span><span class="triangle"></span></a>
+                                <!--   <a href="#">參加贈票活動<span class="triangle"></span></a> -->
                                 <!--  <p>若手機無法支援，請開啟 <a href="http://www.mymusic.net.tw/link/iact.gsp?kid=0">myMusic APP</a> 觀看</p> -->
                             </div>
                             <ul>

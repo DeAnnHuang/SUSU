@@ -19,8 +19,8 @@ $(document).ready(function() {
 
         // ==== Live Music chage link and GA ====
         
-        // $('.liveBtn').find('a').attr('href', 'some href'); //link
-        // $('.liveBtn').find('a').attr('onclick', '123'); //GA
+        $('.liveBtn').find('a').attr('href', 'http://live-1-twm.cdn.jforce.com.tw/HLS/KBRO_2CH/index.m3u8'); //link
+        $('.liveBtn').find('a').attr('onclick', "ga_event_mobile('演唱會直播','Click_View',' 演唱會直播_蘇蘇_Mobile')"); //GA
 
     } else {
 
@@ -28,9 +28,9 @@ $(document).ready(function() {
 
 
 
-    // ======== scroll btn ========== //
+    // // ======== scroll btn ========== //
 
-    scroll($('.liveBtn a'), $('.Step'));
+    // scroll($('.liveBtn a'), $('.Step'));
 
 
 
