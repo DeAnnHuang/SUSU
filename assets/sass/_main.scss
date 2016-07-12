@@ -131,10 +131,12 @@ $slopeImg:5deg;
     background: rgba(0, 0, 0, 0.8);
     @include ngAnimate;
     .LiveMusic {
-        width: 65%;
-        // height: 70%;
+        @include iframeWH(65vw);
         box-shadow: 2px 2px 20px rgba(0, 0, 0, 0.3);
         @include Flex(center, center);
+        body{
+            background-color: transparent;
+        }
     }
     .close {
         position: absolute;
@@ -159,7 +161,7 @@ $slopeImg:5deg;
         margin-left: -125%;
     }
     .livemusicWrap .LiveMusic {
-        width: 70%;
+        @include iframeWH(70vw);
     }
 }
 
@@ -175,7 +177,7 @@ $slopeImg:5deg;
         }
     }
     .livemusicWrap .LiveMusic {
-        width: 85%;
+        @include iframeWH(85vw);
     }
     .main {
         position: relative;
@@ -267,14 +269,14 @@ $slopeImg:5deg;
         }
     }
     .livemusicWrap .LiveMusic {
-        width: 95%;
+        @include iframeWH(95vw);
     }
 }
 
 @media screen and (max-width: 414px) {
     .livemusicWrap {
         .LiveMusic {
-            width: 95%;
+            @include iframeWH(95vw);
         }
         .close {
             right: 3%;

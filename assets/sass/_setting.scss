@@ -83,3 +83,8 @@ li {
 .x-ng-cloak {
     display: none !important;
 }
+
+@mixin iframeWH($width) {
+    width: $width;
+    height: ($width*0.56);
+}
